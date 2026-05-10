@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C96BRF528P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-C96BRF528P');
+    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareNess — Medical Escort & Companion Services in China</title>
+  <meta name="description" content="Professional medical escort and accompaniment services for foreigners visiting hospitals in mainland China. Language support, navigation, and care — no medical advice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a2e;
+      --cream: #f9f5ef;
+      --warm: #f0e9dc;
+      --accent: #c8634a;
+      --accent-light: #e8927a;
+      --sage: #5a7a6a;
+      --sage-light: #8aaa9a;
+      --gold: #c9a84c;
+      --text-body: #3a3a4a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background: rgba(249,245,239,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,180,150,0.2);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.55rem 1.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(37,211,102,0.3);
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 18px rgba(37,211,102,0.4); }
+    .nav-cta svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 4rem 6rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.8rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--sage);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.6rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-body);
+      max-width: 42ch;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
+    .btn-primary svg { width: 20px; height: 20px; fill: #fff; }
+
+    .btn-secondary {
+      font-size: 0.9rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* hero right decorative */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-bg-shape {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--warm) 0%, #e8ddd0 100%);
+      clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .hero-card-stack {
+      position: relative;
+      z-index: 2;
+      margin-top: 6rem;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(26,26,46,0.1);
+      width: 300px;
+    }
+
+    .hero-card-accent {
+      position: absolute;
+      top: -24px;
+      right: -24px;
+      background: var(--accent);
+      border-radius: 16px;
+      padding: 1.4rem;
+      width: 200px;
+      box-shadow: 0 12px 40px rgba(200,99,74,0.3);
+      color: #fff;
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .card-sub {
+      font-size: 0.8rem;
+      opacity: 0.65;
+      margin-top: 0.3rem;
+    }
+
+    .flag-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .flag-badge {
+      font-size: 1.2rem;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--ink);
+      color: rgba(255,255,255,0.75);
+      padding: 1.2rem 5rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 6rem 5rem; }
+
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-body);
+      font-weight: 300;
+      max-width: 55ch;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: #fff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .service-card {
+      padding: 2.2rem;
+      border: 1px solid rgba(200,180,150,0.25);
+      border-radius: 16px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,26,46,0.08); border-color: transparent; }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 0.7rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-body);
+      font-weight: 300;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: var(--warm);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--sage-light), transparent);
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-body);
+      font-weight: 300;
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: var(--sage);
+      color: #fff;
+      padding: 3rem 5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .disclaimer-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .disclaimer-text { font-size: 0.92rem; line-height: 1.7; opacity: 0.9; }
+    .disclaimer-text strong { font-weight: 500; opacity: 1; display: block; margin-bottom: 0.3rem; font-size: 1rem; }
+
+    /* ── WHY US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .why-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-text { font-size: 0.95rem; line-height: 1.65; font-weight: 300; }
+    .why-text strong { font-weight: 500; color: var(--ink); display: block; }
+
+    .why-visual {
+      background: linear-gradient(135deg, var(--ink) 0%, #2a2a4e 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-visual::before {
+      content: '关怀';
+      position: absolute;
+      bottom: -1rem;
+      right: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      opacity: 0.06;
+      line-height: 1;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-box {
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.07);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      opacity: 0.65;
+      margin-top: 0.4rem;
+      line-height: 1.4;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 6rem 5rem;
+    }
+
+    .cta-section .section-title { color: #fff; }
+
+    .cta-section .section-sub {
+      color: rgba(255,255,255,0.85);
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #fff;
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 1rem 2.4rem;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.2); }
+    .btn-wa svg { width: 22px; height: 22px; fill: #25D366; }
+
+    .cta-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      opacity: 0.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.55);
+      padding: 3rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .footer-logo span { color: var(--accent-light); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav { padding: 1.2rem 2rem; }
+      section { padding: 4.5rem 2.5rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 9rem 2.5rem 3rem; }
+      .hero-right { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .trust-bar { padding: 1.2rem 2.5rem; }
+      .disclaimer { padding: 2.5rem; }
+      .cta-section { padding: 4rem 2.5rem; }
+      footer { padding: 2rem 2.5rem; flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .trust-bar { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Care<span>ness</span></div>
+  <a class="nav-cta" href="https://wa.me/8613000000000?text=Hello%2C%20I%20need%20medical%20escort%20assistance%20in%20China." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.878L0 24l6.335-1.521A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.498-5.192-1.37l-.373-.218-3.876.93.967-3.763-.24-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WhatsApp Us
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Medical Companion Services · China</div>
+    <h1>Your Trusted Guide<br/>Through <em>Chinese</em><br/>Healthcare</h1>
+    <p class="hero-desc">
+      Navigating a foreign hospital can be overwhelming. We accompany you every step — from registration to discharge — so you feel safe, informed, and never alone.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/8613000000000?text=Hello%2C%20I%20need%20medical%20escort%20service%20in%20China." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.878L0 24l6.335-1.521A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.498-5.192-1.37l-.373-.218-3.876.93.967-3.763-.24-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a class="btn-secondary" href="#services">See our services →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-shape"></div>
+    <div class="hero-card-stack">
+      <div class="hero-card-accent">
+        <div class="card-label">Available Now</div>
+        <div class="card-value">24 / 7<br/>Support</div>
+        <div class="card-sub">Beijing · Shanghai · Guangzhou</div>
+      </div>
+      <div class="hero-card">
+        <div class="card-label">Languages Supported</div>
+        <div class="card-value">English, French,<br/>German & more</div>
+        <div class="flag-row">
+          <span class="flag-badge">🇬🇧</span>
+          <span class="flag-badge">🇺🇸</span>
+          <span class="flag-badge">🇫🇷</span>
+          <span class="flag-badge">🇩🇪</span>
+          <span class="flag-badge">🇪🇸</span>
+          <span class="flag-badge">🇯🇵</span>
+          <span class="flag-badge">🇷🇺</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Non-Medical Companionship Only</div>
+  <div class="trust-item"><div class="trust-dot"></div>Multilingual Escorts</div>
+  <div class="trust-item"><div class="trust-dot"></div>Beijing · Shanghai · Guangzhou · Shenzhen</div>
+  <div class="trust-item"><div class="trust-dot"></div>Foreign-Friendly Service</div>
+  <div class="trust-item"><div class="trust-dot"></div>Same-Day Booking Available</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-tag">What We Do</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:2rem;">
+    <h2 class="section-title">Compassionate Support,<br/>Start to Finish</h2>
+    <p class="section-sub">We are not medical professionals. We are your personal guide, translator, and advocate — ensuring smooth, stress-free hospital visits in mainland China.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🗺️</span>
+      <div class="service-title">Hospital Navigation</div>
+      <p class="service-desc">We guide you through unfamiliar hospital layouts — finding the right departments, registration counters, and waiting areas so you never feel lost.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💬</span>
+      <div class="service-title">Language Bridging</div>
+      <p class="service-desc">Our bilingual escorts help communicate your situation to hospital staff, ensuring key information is conveyed clearly without confusion.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📋</span>
+      <div class="service-title">Registration Assistance</div>
+      <p class="service-desc">From filling out forms to obtaining queue numbers and appointment slips, we handle the administrative process on your behalf.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚖</span>
+      <div class="service-title">Transport Coordination</div>
+      <p class="service-desc">We arrange reliable pickup and drop-off, coordinate between your accommodation and the hospital, and escort you safely back when done.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💊</span>
+      <div class="service-title">Pharmacy Support</div>
+      <p class="service-desc">After consultations, we help you locate the pharmacy, understand prescription pickup procedures, and clarify dosage instructions.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📞</span>
+      <div class="service-title">Pre-Visit Planning</div>
+      <p class="service-desc">We research suitable hospitals, specialist departments, and appointment availability before your visit, saving you time and uncertainty.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-tag">The Process</div>
+  <h2 class="section-title">How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Contact Us</div>
+      <p class="step-desc">Send us a WhatsApp message with your situation and location. We respond promptly.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Plan Together</div>
+      <p class="step-desc">We discuss your needs, recommend a suitable hospital, and arrange a convenient time.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">We Accompany You</div>
+      <p class="step-desc">Your escort meets you at your location and stays by your side throughout the hospital visit.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Safe Return</div>
+      <p class="step-desc">We see you safely home, help you understand next steps, and remain available for follow-ups.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="disclaimer-icon">⚕️</div>
+  <div class="disclaimer-text">
+    <strong>Important Notice: Non-Medical Service</strong>
+    CareNess provides escort, companionship, and navigation assistance only. We do not offer medical advice, diagnosis, treatment, or any form of clinical care. Our team is not composed of licensed medical professionals. All medical decisions remain entirely between you and the treating physician.
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Why CareNess</div>
+      <h2 class="section-title">We Know What<br/>It Feels Like</h2>
+      <p class="section-sub">Being sick in a foreign country is frightening. The language, the system, the crowds — it's too much to handle alone. We've been there. That's why we exist.</p>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text"><strong>Fluent Bilingual Escorts</strong>Native Chinese speakers with strong English (and other languages) skills — no miscommunication.</div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text"><strong>Familiar with Major Hospitals</strong>We know the layouts, systems, and procedures of top hospitals across multiple Chinese cities.</div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text"><strong>Culturally Sensitive</strong>We bridge cultural gaps with patience and professionalism, making you feel respected and understood.</div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text"><strong>Flexible & Responsive</strong>Book same-day when possible. We adapt to urgent needs and unexpected situations.</div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Hospital Visits Assisted</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Nationalities Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">24h</div>
+          <div class="stat-label">WhatsApp Availability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="section-tag" style="color:rgba(255,255,255,0.7);">Get in Touch</div>
+  <h2 class="section-title">Ready When You Need Us</h2>
+  <p class="section-sub">Don't face a Chinese hospital alone. Reach out now — we'll respond quickly and take care of the rest.</p>
+  <a class="btn-wa" href="https://wa.me/8613000000000?text=Hello%20CareNess%2C%20I%20need%20help%20with%20a%20hospital%20visit%20in%20China." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.878L0 24l6.335-1.521A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.498-5.192-1.37l-.373-.218-3.876.93.967-3.763-.24-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Message Us on WhatsApp
+  </a>
+  <p class="cta-note">We usually respond within minutes · careness.cn</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Care<span>ness</span> · careness.cn</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#how">How It Works</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div>© 2025 CareNess · Non-medical companion service</div>
+</footer>
+
+</body>
+</html>
+
